@@ -1,0 +1,11 @@
+.bg{
+    background-image: url(../../../public/img/login3.jpg);
+    background-position: center center;
+    background-size: cover;
+     
+}
+.bg2{
+    background-image: url(../../../public/img/register.jpg);
+    background-position: center center;
+    background-size: cover;
+}
