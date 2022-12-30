@@ -41,7 +41,7 @@ export default function Register() {
         </div>
         <div className="col bg-light p-3 rounded-end">
           <h4 className="fw-bold text-center py-2">Bienvenid@ ingrese sus datos aqui:</h4>
-          <form onSubmit={handleSubmit}> 
+          <form> 
               <div className="mb-3">
                 <label>Nombres</label>
                 <input type="text" className="form-control" placeholder="Nombre" 
@@ -72,8 +72,8 @@ export default function Register() {
               </div>
               
               <div className="d-grid my-3">
-                  <button className="btn btn-outline-dark" type="submit">
-                    Registrar
+                  <button className="btn btn-outline-dark" type="submit" onClick={handleSubmit}>
+                    Registrar(
                   </button>
               </div>      
           </form>

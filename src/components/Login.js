@@ -1,15 +1,15 @@
 import './css/style.css'
-//import useAuth from "../auth/useAuth";
+import useAuth from "../auth/useAuth";
 import axios from 'axios';
 import { useState } from 'react';
 
-//const userCredentials = {};
+const userCredentials = {};
 
 export default function Login() {
   
-  //const {login} = useAuth();
+  const {login} = useAuth();
 
-  /*const [username, setUsername] = useState('');
+  const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
 
@@ -27,36 +27,10 @@ export default function Login() {
       setError(error.response.data.error);
     });
     // luego llamar a logIn para cambiar el estado de inicio de sesión
-    login();
-  }*/
-
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
-  const [error, setError] = useState('');
-
-  // Maneja el envío del formulario de inicio de sesión
-  const handleSubmit = (event) => {
-    event.preventDefault();
-
-    // Envía una solicitud POST al servidor con los datos del formulario
-    axios.post('http://localhost:3001/login', {
-      username,
-      password
-    }).then((response) => {
-      // Si la iniciación de sesión es exitosa, redirige al usuario a otra página
-      window.location = '/home';
-    }).catch((error) => {
-      // Si hay un error, muestra un mensaje de error al usuario
-      setError(error.response.data.error);
-    });
-  };
+    login(username, password);
+  }
 
   return (
-    /*<div>
-      <h1>LOGIN</h1>
-
-      <button onClick={() => login(userCredentials)}>Iniciar Sesion</button>
-    </div>*/
     
     <div className="container w-75 mt-5 rounded shadow border">
       <div className="row">
@@ -77,7 +51,7 @@ export default function Login() {
                   value={password} onChange={(event) => setPassword(event.target.value)}/>
               </div>
               <div className="d-grid my-3">
-                  <button /*onClick={() => login(userCredentials)}*/type="submit" className="btn btn-outline-dark">
+                  <button onClick={() => login(userCredentials)} className="btn btn-outline-dark">
                     Iniciar Sesion
                   </button>
                   {error && <p style={{ color: 'red' }}>{error}</p>}

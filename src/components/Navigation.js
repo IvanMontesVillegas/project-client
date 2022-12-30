@@ -18,7 +18,7 @@ export default function Navigation() {
             <Nav className="ms-auto">
                 <Nav.Link as={NavLink} to={routes.login}>Login</Nav.Link>
                 <Nav.Link as={NavLink} to={routes.register}>Register</Nav.Link>
-                <Nav.Link to={routes.home} onClick={logout}>Cerrar Sesion</Nav.Link>
+                <Nav.Link as={NavLink} to={routes.home} onClick={logout}>Cerrar Sesion</Nav.Link>
             </Nav>
         </Navbar.Collapse>
     </Navbar>   
